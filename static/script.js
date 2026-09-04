@@ -1,24 +1,26 @@
-// Handle product form submission
-document.addEventListener("DOMContentLoaded", () => {
+// Handle order form
+const orderForm = document.getElementById("orderForm");
 
-    const form = document.getElementById("productForm");
+if (orderForm) {
 
-    // Check if form exists on page
-    if (form) {
+    orderForm.addEventListener("submit", function (e) {
+        e.preventDefault();
 
-        form.addEventListener("submit", function (e) {
-            e.preventDefault();
+        const product = document.getElementById("orderProduct").value;
+        const qty = document.getElementById("orderQty").value;
 
-            // Get input values
-            const name = document.getElementById("productName").value;
-            const qty = document.getElementById("quantity").value;
+        // Create new table row
+        const table = document.getElementById("ordersTable");
+        const row = document.createElement("tr");
 
-            // Simple console log (can connect to backend later)
-            console.log("Product Added:", name, qty);
+        row.innerHTML = `
+            <td>${Date.now()}</td>
+            <td>${product}</td>
+            <td>${qty}</td>
+        `;
 
-            // Reset form after submission
-            form.reset();
-        });
-    }
+        table.appendChild(row);
 
-});
+        orderForm.reset();
+    });
+}
