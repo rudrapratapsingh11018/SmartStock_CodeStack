@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Orders</title>
+
+    <!-- Shared stylesheet -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Navigation -->
+    <header>
+        <h1>Orders</h1>
+        <nav>
+            <a href="/">Dashboard</a>
+            <a href="/admin">Admin</a>
+            <a href="/orders">Orders</a>
+        </nav>
+    </header>
+
+    <!-- Order form -->
+    <section>
+        <h2>Create Order</h2>
+
+        <form id="orderForm">
+            <input type="text" id="orderProduct" placeholder="Product Name" required>
+            <input type="number" id="orderQty" placeholder="Quantity" required>
+            <button type="submit">Place Order</button>
+        </form>
+    </section>
+
+    <!-- Order table -->
+    <section>
+        <h2>Order History</h2>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                </tr>
+            </thead>
+
+            <tbody id="ordersTable">
+                <!-- JS will add rows -->
+            </tbody>
+        </table>
+    </section>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
