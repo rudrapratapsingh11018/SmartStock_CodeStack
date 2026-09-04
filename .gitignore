@@ -1,0 +1,15 @@
+# Ignore node modules (if used later)
+node_modules/
+
+# Python cache
+__pycache__/
+*.pyc
+
+# Database file (optional: ignore in production)
+*.db
+
+# Environment files
+.env
+
+# VS Code settings
+.vscode/
