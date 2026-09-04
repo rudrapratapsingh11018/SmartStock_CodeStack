@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SmartStock Dashboard</title>
+
+    <!-- Link main stylesheet from static folder -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+    <!-- Main container to keep layout centered -->
+    <div class="container">
+
+        <!-- Header section: app name + quick navigation -->
+        <header>
+            <h1>SmartStock</h1>
+            <nav>
+                <a href="/">Dashboard</a>
+                <a href="/admin">Admin</a>
+                <a href="/orders">Orders</a>
+            </nav>
+        </header>
+
+        <!-- Intro section: short purpose of system -->
+        <section class="intro">
+            <h2>Warehouse Dashboard</h2>
+            <p>
+                Track inventory, monitor stock movement, and manage orders in real time.
+            </p>
+        </section>
+
+        <!-- Key stats section: quick overview cards -->
+        <section class="stats">
+
+            <!-- Total products card -->
+            <div class="card">
+                <h3>Total Products</h3>
+                <p id="totalProducts">0</p>
+            </div>
+
+            <!-- Orders card -->
+            <div class="card">
+                <h3>Total Orders</h3>
+                <p id="totalOrders">0</p>
+            </div>
+
+            <!-- Stock movement card -->
+            <div class="card">
+                <h3>Stock Movement</h3>
+                <p id="movement">0</p>
+            </div>
+
+        </section>
+
+        <!-- Table section: display product inventory -->
+        <section class="inventory">
+
+            <!-- Table title -->
+            <h2>Inventory List</h2>
+
+            <!-- Data table -->
+            <table>
+
+                <!-- Table header -->
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Product Name</th>
+                        <th>Quantity</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+
+                <!-- Table body (filled dynamically using JS) -->
+                <tbody id="inventoryTable">
+                    <!-- Data will be injected from script.js -->
+                </tbody>
+
+            </table>
+
+        </section>
+
+    </div>
+
+    <!-- Load JS file at the end for better performance -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
