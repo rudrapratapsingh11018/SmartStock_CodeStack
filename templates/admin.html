@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel</title>
+
+    <!-- Link shared styles -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+
+    <!-- Navigation for switching pages -->
+    <header>
+        <h1>SmartStock Admin</h1>
+        <nav>
+            <a href="/">Dashboard</a>
+            <a href="/admin">Admin</a>
+            <a href="/orders">Orders</a>
+        </nav>
+    </header>
+
+    <!-- Form to add new product -->
+    <section>
+        <h2>Add Product</h2>
+
+        <form id="productForm">
+
+            <!-- Product name input -->
+            <input type="text" id="productName" placeholder="Product Name" required>
+
+            <!-- Quantity input -->
+            <input type="number" id="quantity" placeholder="Quantity" required>
+
+            <!-- Submit button -->
+            <button type="submit">Add Product</button>
+
+        </form>
+
+    </section>
+
+</div>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+</html>
